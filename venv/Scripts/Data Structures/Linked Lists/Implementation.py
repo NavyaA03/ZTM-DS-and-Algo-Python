@@ -56,8 +56,12 @@ class LinkedList():
 #And ofcourse, we'll increase the length by 1
     def prepend(self, data):
         new_node = Node(data)
-        new_node.next = self.head
-        self.head = new_node
+        if(self.head == None): 
+			self.head = new_node
+			self.tail = new_node
+		else:
+            new_node.next = self.head
+            self.head = new_node
         self.length += 1
 
 
